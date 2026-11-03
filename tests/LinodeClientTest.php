@@ -13,7 +13,7 @@ namespace Linode;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Exception\TransferException;
+use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use Linode\BetaPrograms\BetaProgramRepositoryInterface;
@@ -336,7 +336,7 @@ final class LinodeClientTest extends TestCase
         $client = new class() extends Client {
             public function request($method, $uri = '', array $options = []): ResponseInterface
             {
-                throw new TransferException('Invalid URI');
+                throw new RequestException('Invalid URI', new Request('GET', '/test'));
             }
         };
 
