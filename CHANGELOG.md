@@ -2,6 +2,11 @@
 
 All notable changes to the package will be documented in this file.
 
+## Unreleased
+
+- Allow `guzzlehttp/guzzle` ^8.0
+- Update `LinodeClientTest::testApiGuzzleException()` to build a `RequestException`; Guzzle 8 changed the `TransferException` constructor
+
 ## v3.5.0 - 2024-06-25
 
 - Sync library with `webinarium` origin v3.5.0
